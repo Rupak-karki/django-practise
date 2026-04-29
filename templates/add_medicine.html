@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Add Medicine</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="name" placeholder="Medicine Name" class="form-control my-2">
+    <input type="number" name="price" placeholder="Price" class="form-control my-2">
+    <input type="number" name="stock" placeholder="Stock" class="form-control my-2">
+
+    <button type="submit" class="btn btn-primary">Add Medicine</button>
+</form>
+
+{% endblock %}

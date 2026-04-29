@@ -8,9 +8,6 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-from django.shortcuts import render, redirect
-from .models import Medicine
-
 def add_medicine(request):
     if request.method == 'POST':
         name = request.POST.get('name')
