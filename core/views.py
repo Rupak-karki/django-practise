@@ -2,9 +2,20 @@ from django.shortcuts import render, redirect
 
 from .models import Medicine
 
+# def home(request):
+#     medicines = Medicine.objects.all()
+#     return render(request, 'home.html', {'medicines': medicines})
+
 def home(request):
-    medicines = Medicine.objects.all()
+    query = request.GET.get('q')
+
+    if query:
+        medicines = Medicine.objects.filter(name__icontains=query)
+    else:
+        medicines = Medicine.objects.all()
+
     return render(request, 'home.html', {'medicines': medicines})
+
 def about(request):
     return render(request, 'about.html')
 
