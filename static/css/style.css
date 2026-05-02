@@ -9,3 +9,41 @@ h2 {
 footer {
     font-size: 14px;
 }
+
+/* Navbar hover effect */
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #FFD700 !important; /* Gold color on hover */
+}
+
+/* button hover effect */
+.btn-success {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-success:hover {
+  background-color: #28a745; /* darker green */
+  transform: scale(1.05);   /* slight zoom effect */
+}
+
+/* image hover effect */
+.img-fluid {
+  transition: transform 0.3s ease;
+}
+
+.img-fluid:hover {
+  transform: scale(1.02); /* subtle zoom */
+}
+
+/* medical card hover */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* lift effect */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
