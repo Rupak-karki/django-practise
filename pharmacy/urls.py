@@ -16,34 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# from . import views
+from django.contrib.auth import views as auth_views
+
+from django.contrib.auth.views import LogoutView
 
 
-# from django.http import HttpResponse
-
-# from django.shortcuts import render
-
-#temporary view
-
-# def home (request):
-#     return HttpResponse("Welcome to pharmacy.")
-
-# from django.http import HttpResponse
-
-# def home(request):
-#     html = """
-#     <h1>Welcome to A-One Pharmacy</h1>
-#     <p>Your health, our priority</p>
-#     """
-#     return HttpResponse(html)
-
-
-
-
-#     return render(request, 'home.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
+    path('login/', auth_views.LoginView.as_view(template_name='login.html')),
+    path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
 ]
 

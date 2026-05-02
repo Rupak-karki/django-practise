@@ -2,9 +2,8 @@ from django.shortcuts import render, redirect
 
 from .models import Medicine
 
-# def home(request):
-#     medicines = Medicine.objects.all()
-#     return render(request, 'home.html', {'medicines': medicines})
+from django.contrib.auth.decorators import login_required
+
 
 def home(request):
     query = request.GET.get('q')
@@ -19,8 +18,9 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+@login_required
 def add_medicine(request):
-    if request.method == 'POST':
+     if request.method == 'POST':
         name = request.POST.get('name')
         price = request.POST.get('price')
         stock = request.POST.get('stock')
@@ -31,6 +31,6 @@ def add_medicine(request):
             stock=stock
         )
 
-        return redirect('/')   # go back to home
+    #  return redirect('/')   # go back to home
 
-    return render(request, 'add_medicine.html')
+     return render(request, 'add_medicine.html')
