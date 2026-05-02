@@ -36,11 +36,11 @@
          <a class="nav-link text-white me-4" href="/">Home</a>
 
 
-          <a class="nav-link text-white me-4" href="/add/">Add Medicine</a>
+         {% comment %} <a class="nav-link text-white me-4" href="/add/">Add Medicine</a> {% endcomment %}
 
-         {% comment %} {% if user.is_authenticated %}
+         {% if user.is_authenticated %}
          <a class="nav-link text-white me-4" href="/add/">Add Medicine</a>
-          {% endif %} {% endcomment %}
+          {% endif %} 
 
 
          <a class="nav-link text-white" href="/about/">About</a>
